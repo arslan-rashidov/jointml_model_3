@@ -1,11 +1,3 @@
-from collections import OrderedDict
-
-import torch
-from torch import nn
-
-from federated_learning.core.utils.typing import NDArrays
-
-
 class SimpleModel(nn.Module):
     def __init__(self, input_shape, classes):
         super().__init__()

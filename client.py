@@ -1,17 +1,3 @@
-from torch import nn
-from torch.optim import SGD
-from torch.utils.data import DataLoader
-
-from federated_learning.core.client import Client
-from federated_learning.core.utils.typing import GetWeightsInstructions, GetWeightsResult, TrainInstructions, \
-    TrainResult, \
-    EvaluateInstructions, EvaluateResult, Code, Status, Weights
-from federated_learning.core.utils.weights_transformation import ndarrays_to_weights, weights_to_ndarrays
-from federated_learning.examples.mnist_fl.client.dataset import MNISTDataset, train_test_dataset_split
-from federated_learning.examples.mnist_fl.client.net import load_model, SimpleModel
-
-
-
 INPUT_SHAPE = 784
 CLASSES_NUM = 10
 

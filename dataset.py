@@ -1,12 +1,3 @@
-import os
-
-import numpy as np
-import cv2
-from torch import Tensor, LongTensor
-from torch.utils.data import Dataset, Subset
-from sklearn.model_selection import train_test_split
-
-
 class MNISTDataset(Dataset):
     def __init__(self, dataset_path=None, images=None, labels=None):
         if images and labels:
