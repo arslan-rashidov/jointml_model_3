@@ -1,10 +1,10 @@
 import os
 
 import numpy as np
-import cv2
 from torch import Tensor, LongTensor
 from torch.utils.data import Dataset, Subset
 from sklearn.model_selection import train_test_split
+import skimage
 
 
 class MNISTDataset(Dataset):
@@ -36,8 +36,8 @@ class MNISTDataset(Dataset):
             for image_name in os.listdir(digit_images_global_path):
                 image_path = digit_images_global_path + '/' + image_name
 
-                image_gray = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-                image = np.array(image_gray).flatten()
+                image_gray = skimage.io.imread(image_path, as_gray=True)
+                image = image_gray.flatten()
                 label = int(image_path.split(os.path.sep)[-2])
 
                 images.append(image / 255)
